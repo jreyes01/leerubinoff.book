@@ -12,9 +12,15 @@
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
-				<a href = "#" class="brand">Leerubinoff.Book</a>
+				<a href="http://0.0.0.0:3000/static_pages/home"class="brand">Leerubinoff.Book</a>
 				<ul class="nav">
+					<% if user_signed_in? %>
 					<li><%= link_to "All Trollups/Statuses", feed_path %></li>
+					<%else%>
+					
+					<% end %>
+
+
 				</ul>
 				<ul class="nav pull-right">
 					<% if user_signed_in? %>

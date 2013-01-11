@@ -1,12 +1,19 @@
 LeerubinoffBook::Application.routes.draw do
+  
+  
+  get "static_pages/home", to: 'static_pages#home', as: :home
+
+
+  get "static_pages/help"
+
   get "profiles/show"
 
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks =>"users/omniauth_callbacks"}
 
   devise_scope :user do
     get 'register', to: 'devise/registrations#new', as: :register
     get 'login', to: 'devise/sessions#new', as: :login
-    get 'logout', to: 'devise/session#destroy', as: :logout
+    get 'logout', to: 'devise/sessions#destroy', as: :logout
   end
 
   resources :statuses
