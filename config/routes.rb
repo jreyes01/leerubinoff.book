@@ -1,10 +1,11 @@
 LeerubinoffBook::Application.routes.draw do
-  
-  
+
+  root to: 'static_pages#home'
+
+  match '/help', to: 'static_pages#help'
+
   get "static_pages/home", to: 'static_pages#home', as: :home
 
-
-  get "static_pages/help"
 
   get "profiles/show"
 
@@ -21,6 +22,8 @@ LeerubinoffBook::Application.routes.draw do
   root to:'statuses#index'
 
   get '/:id', to:'profiles#show'
+
+  #If doesn't work change back to profiles#show
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -78,4 +81,6 @@ LeerubinoffBook::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+
+
 end
