@@ -28,8 +28,8 @@ validates :profile_name,presence:true,
 
   def full_name 
   	first_name + " " + last_name
-
   end
+  
 
     def gravatar_url
       stripped_email = email.strip
